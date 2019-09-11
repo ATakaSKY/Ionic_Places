@@ -1,0 +1,7 @@
+{
+  "appId": "com.sky.ionicstarter",
+  "appName": "ionic-starter",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
