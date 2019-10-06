@@ -38,12 +38,8 @@ const routes: Routes = [
                     loadChildren: './offers/new-offer/new-offer.module#NewOfferPageModule'
                 },
                 {
-                    path: 'edit/:offerId',
+                    path: 'edit/:placeId',
                     loadChildren: './offers/edit-offer/edit-offer.module#EditOfferPageModule'
-                },
-                {
-                    path: ':placeId',
-                    loadChildren: './offers/offer-bookings/offer-bookings.module#OfferBookingsPageModule'
                 }
             ]
         }
