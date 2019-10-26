@@ -10,7 +10,7 @@ const fbAdmin = require('firebase-admin');
 const { Storage } = require('@google-cloud/storage');
 
 const storage = new Storage({
-  projectId: 'ionic-places-c5a21'
+  projectId: 'YOUR_PROJECT_ID'
 });
 
 fbAdmin.initializeApp({
@@ -60,7 +60,7 @@ exports.storeImage = functions.https.onRequest((req, res) => {
         .then(decodedToken => {
           console.log(uploadData.type);
           return storage
-            .bucket('ionic-places-c5a21.appspot.com')
+            .bucket('YOUR_PROJECT_ID.appspot.com')
             .upload(uploadData.filePath, {
               uploadType: 'media',
               destination: imagePath,
@@ -76,7 +76,7 @@ exports.storeImage = functions.https.onRequest((req, res) => {
           return res.status(201).json({
             imageUrl:
               'https://firebasestorage.googleapis.com/v0/b/' +
-              storage.bucket('ionic-places-c5a21.appspot.com').name +
+              storage.bucket('YOUR_PROJECT_ID.appspot.com').name +
               '/o/' +
               encodeURIComponent(imagePath) +
               '?alt=media&token=' +
